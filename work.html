@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="icon/png" href="./assets/img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .blob {
+            filter: blur(60px);
+            opacity: 0.4;
+            transition: transform 0.3s ease-out;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-line {
+            background: linear-gradient(to bottom, #334155 0%, #334155 80%, transparent 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-[#0f172a] text-slate-200 overflow-x-hidden">
+
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div id="blob1" class="blob absolute top-[-10%] left-[-5%] w-[400px] h-[400px] bg-blue-900 rounded-full"></div>
+        <div id="blob2" class="blob absolute bottom-[10%] right-[-5%] w-[500px] h-[500px] bg-purple-900 rounded-full">
+        </div>
+        <div id="blob3" class="blob absolute top-[40%] left-[20%] w-[300px] h-[300px] bg-cyan-900 rounded-full"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-8 py-3">
+            <a href="index.html"
+                class="text-xl font-semibold tracking-tight hover:text-white transition-colors duration-300">Max
+                Mayfield</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium opacity-70">
+                <a href="about.html" class="hover:opacity-100 hover:text-white transition-all duration-300">About</a>
+                <a href="work.html" class="opacity-100 text-white transition-all duration-300">Work</a>
+                <a href="Projects.html"
+                    class="hover:opacity-100 hover:text-white transition-all duration-300">Projects</a>
+                <a href="skills.html" class="hover:opacity-100 hover:text-white transition-all duration-300">Skills</a>
+            </div>
+            <a href="contact.html"
+                class="text-sm font-semibold border-b border-slate-400 pb-0.5 hover:text-white hover:border-white transition-all duration-300">Let's
+                Talk</a>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pt-40 pb-32">
+
+        <header class="mb-24 reveal">
+            <h1 class="text-xs uppercase tracking-[0.5em] text-slate-400 font-bold mb-6">My Journey</h1>
+            <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Professional Experience</h2>
+            <p class="text-lg text-slate-400 font-light max-w-2xl leading-relaxed">
+                A chronicle of technical contributions, architectural leadership, and digital impact across the global
+                tech ecosystem.
+            </p>
+        </header>
+
+        <div class="relative">
+            <div class="absolute left-0 md:left-8 top-0 bottom-0 w-[1px] timeline-line hidden md:block"></div>
+
+            <section class="relative md:pl-24 mb-32 reveal">
+                <div
+                    class="absolute left-8 -translate-x-1/2 top-2 w-3 h-3 bg-indigo-500 rounded-full hidden md:block border-[4px] border-slate-800 ring-1 ring-slate-700">
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div class="lg:col-span-4 space-y-2">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center grayscale opacity-60">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-semibold tracking-tight">Quantum Systems</h2>
+                        </div>
+                        <p class="text-sm font-medium text-slate-200">Senior Software Engineer</p>
+                        <p class="text-[11px] uppercase tracking-widest text-slate-400 font-bold">Jan 2023 — Present</p>
+                        <p class="text-xs text-slate-400 italic">London / Remote</p>
+                    </div>
+
+                    <div
+                        class="lg:col-span-8 bg-[#1e293b] border border-slate-700/50 p-8 md:p-10 rounded-[2rem] shadow-sm">
+                        <ul class="space-y-6">
+                            <li class="flex gap-4">
+                                <span class="text-slate-500 mt-1.5">—</span>
+                                <p class="text-slate-400 font-light leading-relaxed">
+                                    <strong class="font-medium text-slate-200">Architectural Leadership:</strong> Led
+                                    the transition to a micro-frontend architecture, reducing deployment overlap and
+                                    improving CI/CD pipeline velocity by 35%.
+                                </p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-slate-500 mt-1.5">—</span>
+                                <p class="text-slate-400 font-light leading-relaxed">
+                                    <strong class="font-medium text-slate-200">Performance Optimization:</strong>
+                                    Engineered a custom hydration strategy for SSR components, achieving a 98/100
+                                    Lighthouse score on core e-commerce pages.
+                                </p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-slate-500 mt-1.5">—</span>
+                                <p class="text-slate-400 font-light leading-relaxed">
+                                    <strong class="font-medium text-slate-200">Technical Growth:</strong> Mentored a
+                                    team of 6 engineers, standardizing TypeScript best practices and reducing production
+                                    bug reports by 22% over 12 months.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative md:pl-24 mb-32 reveal">
+                <div
+                    class="absolute left-8 -translate-x-1/2 top-2 w-3 h-3 bg-slate-700 rounded-full hidden md:block border-[4px] border-slate-800 ring-1 ring-slate-700">
+                </div>
+
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start opacity-80 group hover:opacity-100 transition-opacity duration-500">
+                    <div class="lg:col-span-4 space-y-2">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center grayscale opacity-60">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-semibold tracking-tight">Aether Digital</h2>
+                        </div>
+                        <p class="text-sm font-medium text-slate-200">Full-Stack Developer</p>
+                        <p class="text-[11px] uppercase tracking-widest text-slate-400 font-bold">Aug 2020 — Dec 2022
+                        </p>
+                        <p class="text-xs text-slate-400 italic">Remote / Hybrid</p>
+                    </div>
+
+                    <div
+                        class="lg:col-span-8 bg-[#1e293b] border border-slate-700/50 p-8 md:p-10 rounded-[2rem] shadow-sm group-hover:shadow-md transition-shadow">
+                        <ul class="space-y-6">
+                            <li class="flex gap-4">
+                                <span class="text-slate-500 mt-1.5">—</span>
+                                <p class="text-slate-400 font-light leading-relaxed">
+                                    <strong class="font-medium text-slate-200">Scalable Infrastructure:</strong>
+                                    Integrated headless Shopify API with a custom Next.js frontend, supporting a
+                                    multi-brand smartwatch storefront with 50k+ daily active users.
+                                </p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-slate-500 mt-1.5">—</span>
+                                <p class="text-slate-400 font-light leading-relaxed">
+                                    <strong class="font-medium text-slate-200">System Integration:</strong> Developed a
+                                    middleware service in Node.js to synchronize global inventory across 14 third-party
+                                    logistics providers in real-time.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="relative md:pl-24 mb-32 reveal">
+                <div
+                    class="absolute left-8 -translate-x-1/2 top-2 w-3 h-3 bg-slate-900 border-2 border-slate-700 rounded-full hidden md:block ring-1 ring-slate-800">
+                </div>
+
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start opacity-70 group hover:opacity-100 transition-opacity duration-500">
+                    <div class="lg:col-span-4 space-y-2">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center grayscale opacity-60">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-semibold tracking-tight">Apex Cloud</h2>
+                        </div>
+                        <p class="text-sm font-medium text-slate-200">Software Engineer II</p>
+                        <p class="text-[11px] uppercase tracking-widest text-slate-400 font-bold">Jan 2018 — July 2020
+                        </p>
+                        <p class="text-xs text-slate-400 italic">San Francisco / Hybrid</p>
+                    </div>
+
+                    <div
+                        class="lg:col-span-8 bg-[#1e293b] border border-slate-700/50 p-8 md:p-10 rounded-[2rem] shadow-sm group-hover:shadow-md transition-shadow">
+                        <ul class="space-y-6">
+                            <li class="flex gap-4">
+                                <span class="text-slate-500 mt-1.5">—</span>
+                                <p class="text-slate-400 font-light leading-relaxed">
+                                    <strong class="font-medium text-slate-200">Global Infrastructure:</strong> Developed
+                                    and maintained distributed API services handling 1M+ requests per minute across
+                                    three continents with 99.99% uptime.
+                                </p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-slate-500 mt-1.5">—</span>
+                                <p class="text-slate-400 font-light leading-relaxed">
+                                    <strong class="font-medium text-slate-200">Security Engineering:</strong>
+                                    Implemented OAuth2/OpenID Connect protocols across 40+ internal microservices,
+                                    standardizing the company’s identity management framework.
+                                </p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-slate-500 mt-1.5">—</span>
+                                <p class="text-slate-400 font-light leading-relaxed">
+                                    <strong class="font-medium text-slate-200">Performance Monitoring:</strong>
+                                    Integrated real-time telemetry and alerting systems using Prometheus and Grafana,
+                                    reducing Mean Time to Recovery (MTTR) by 50%.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-30 text-center reveal">
+            <div class="h-[1px] w-full bg-slate-700 mb-20"></div>
+            <h3 class="text-2xl font-light text-slate-400 mb-8">Looking for a technical partner?</h3>
+            <a href="./assets/CV.pdf"
+                class="px-10 py-4 bg-indigo-600 text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-indigo-500 transition-all">
+                Download Full Resume
+            </a>
+        </section>
+    </main>
+
+    <footer class="relative bg-[#0f172a] pt-32 pb-12 px-6 overflow-hidden">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[1px] bg-gradient-to-r from-transparent via-slate-700 to-transparent">
+        </div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-900/10 rounded-full blur-[100px] -z-10"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between items-start gap-20 mb-24">
+                <div class="space-y-8 max-w-sm">
+                    <div>
+                        <h4 class="text-2xl font-semibold tracking-tight text-slate-100">Max<span class="font-light">
+                                Mayfield</span></h4>
+                        <p class="mt-4 text-slate-500 font-light leading-relaxed">Independent software engineer focused
+                            on high-performance digital commerce and minimalist architecture.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400">Open to
+                            work</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-16 md:gap-32">
+                    <div class="space-y-6">
+                        <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-300">Directory</p>
+                        <ul class="space-y-3">
+                            <li><a href="about.html"
+                                    class="group text-sm text-slate-400 hover:text-slate-100 transition-all flex items-center gap-2">About
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 transition-opacity text-[10px]">→</span></a>
+                            </li>
+                            <li><a href="work.html"
+                                    class="group text-sm text-slate-400 hover:text-slate-100 transition-all flex items-center gap-2">Work
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 transition-opacity text-[10px]">→</span></a>
+                            </li>
+                            <li><a href="Projects.html"
+                                    class="group text-sm text-slate-400 hover:text-slate-100 transition-all flex items-center gap-2">Projects
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 transition-opacity text-[10px]">→</span></a>
+                            </li>
+                            <li><a href="skills.html"
+                                    class="group text-sm text-slate-400 hover:text-slate-100 transition-all flex items-center gap-2">Skills
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 transition-opacity text-[10px]">→</span></a>
+                            </li>
+                            <li><a href="contact.html"
+                                    class="group text-sm text-slate-400 hover:text-slate-100 transition-all flex items-center gap-2">Contact
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 transition-opacity text-[10px]">→</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-300">Connect</p>
+                        <ul class="space-y-3">
+                            <li><a href="#"
+                                    class="text-sm text-slate-400 hover:text-slate-100 transition-colors">LinkedIn</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-slate-400 hover:text-slate-100 transition-colors">GitHub</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-slate-400 hover:text-slate-100 transition-colors">Twitter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-slate-700/60 gap-6">
+                <div class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-medium">Designed & Engineered
+                    with <span class="text-slate-200 italic">Intent</span> &copy; 2026</div>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                    class="px-6 py-2 border border-slate-700 rounded-full text-[10px] uppercase tracking-widest font-bold text-slate-500 hover:bg-slate-800 hover:text-slate-200 transition-all flex items-center gap-3">Top
+                    <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg></button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Subtle Mouse Movement for Background Shapes
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) - 0.5;
+            const y = (e.clientY / window.innerHeight) - 0.5;
+            const b1 = document.getElementById('blob1');
+            const b2 = document.getElementById('blob2');
+            const b3 = document.getElementById('blob3');
+            if (b1) b1.style.transform = `translate(${x * 50}px, ${y * 50}px)`;
+            if (b2) b2.style.transform = `translate(${x * -30}px, ${y * -30}px)`;
+            if (b3) b3.style.transform = `translate(${x * 20}px, ${y * -40}px)`;
+        });
+    </script>
+</body>
+
+</html>
